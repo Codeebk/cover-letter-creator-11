@@ -17,7 +17,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client/public/')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -37,5 +37,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+const port = process.env.PORT || 5000;
+app.listen(port);
+
+console.log("App is listening on port " + port);
 
 module.exports = app;
