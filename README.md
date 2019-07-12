@@ -17,6 +17,7 @@ As a user I want to be able to:
 - Enter and edit my contact info associated with my account
 
 ### Wireframes
+![Imgur](https://i.imgur.com/m8uVp2i.jpg)
 ### Technologies Used
 ### Authors
 ### Next Steps
