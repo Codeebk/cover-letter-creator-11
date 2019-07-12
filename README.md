@@ -19,5 +19,11 @@ As a user I want to be able to:
 ### Wireframes
 ![Imgur](https://i.imgur.com/m8uVp2i.jpg)
 ### Technologies Used
+- JavaScript
+- MongoDB
+- Express
+- React
+- Node
+- Gatsby
 ### Authors
 ### Next Steps
