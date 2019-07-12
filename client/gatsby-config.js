@@ -18,8 +18,8 @@ module.exports = {
         resolve: `gatsby-source-mongodb`,
         options: { 
           connectionString: `mongodb+srv://CodeeKing:F3ZQqbqZgxXvUUi@clustercoverletter-xbjor.mongodb.net/test?retryWrites=true&w=majority`,
-          dbName: `cover-letter-creator`, 
-          collection: [`cover-letters`, `users`] }, 
+          dbName: `coverlettercreator`, 
+          collection: [`coverletters`, `users`] }, 
     },
     'gatsby-transformer-sharp',
     {

@@ -21,7 +21,7 @@ const PostWrapper = styled.div`
 `;
 
 const Index = ({ data }) => {
-  const { edges } = data.allMarkdownRemark;
+  const { edges } = data.allMongodbCoverlettercreatorCoverletters;
   return (
     <Layout>
       <Helmet title={'Home Page'} />
@@ -30,10 +30,10 @@ const Index = ({ data }) => {
         {edges.map(({ node }) => (
           <PostList
             key={node.id}
-            cover={node.frontmatter.cover.childImageSharp.fluid}
-            path={node.frontmatter.path}
-            title={node.frontmatter.title}
-            date={node.frontmatter.date}
+            // cover={node.frontmatter.cover.childImageSharp.fluid}
+            // path={node.frontmatter.path}
+            title={node.targetcompany}
+            // date={node.frontmatter.date}
             excerpt={node.excerpt}
           />
         ))}
@@ -66,34 +66,19 @@ Index.propTypes = {
 };
 
 export const query = graphql`
-  query {
-    allMarkdownRemark(
-      limit: 6
-      sort: { order: DESC, fields: [frontmatter___date] }
-    ) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 75)
-          frontmatter {
-            title
-            path
-            tags
-            date(formatString: "MM.DD.YYYY")
-            cover {
-              childImageSharp {
-                fluid(
-                  maxWidth: 1000
-                  quality: 90
-                  traceSVG: { color: "#2B2B2F" }
-                ) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+query {
+  allMongodbCoverlettercreatorCoverletters{
+   edges {
+     node {
+       firstname
+       lastname
+       targetjobtitle
+       targetcompany
+       skillone
+       skilltwo
+       skillthree
+     }
+   }
+ }
+}
 `;

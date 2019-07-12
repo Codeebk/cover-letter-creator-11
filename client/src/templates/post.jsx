@@ -74,7 +74,7 @@ Post.propTypes = {
 
 export const query = graphql`
   query($pathSlug: String!) {
-    markdownRemark(frontmatter: { path: { eq: $pathSlug } }) {
+    allMongodbCover-letter-creatorCover-letters(frontmatter: { path: { eq: $pathSlug } }) {
       html
       frontmatter {
         date
