@@ -7,12 +7,19 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'posts',
+    //     path: `${__dirname}/content/posts`,}
+    //   },
+    // MongoDB
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'posts',
-        path: `${__dirname}/content/posts`,
-      },
+        resolve: `gatsby-source-mongodb`,
+        options: { 
+          connectionString: `mongodb+srv://CodeeKing:F3ZQqbqZgxXvUUi@clustercoverletter-xbjor.mongodb.net/test?retryWrites=true&w=majority`,
+          dbName: `cover-letter-creator`, 
+          collection: [`cover-letters`, `users`] }, 
     },
     'gatsby-transformer-sharp',
     {
