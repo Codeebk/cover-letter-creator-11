@@ -73,28 +73,45 @@ Post.propTypes = {
 };
 
 export const query = graphql`
-  query($pathSlug: String!) {
-    allMongodbCover-letter-creatorCover-letters(frontmatter: { path: { eq: $pathSlug } }) {
-      html
-      frontmatter {
-        date
-        title
-        tags
-        cover {
-          childImageSharp {
-            fluid(
-              maxWidth: 1920
-              quality: 90
-              duotone: { highlight: "#386eee", shadow: "#2323be", opacity: 60 }
-            ) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-            resize(width: 1200, quality: 90) {
-              src
-            }
-          }
-        }
-      }
-    }
-  }
+
+query {
+  allMongodbCoverlettercreatorCoverletters{
+   edges {
+     node {
+       firstname
+       lastname
+       targetjobtitle
+       targetcompany
+       skillone
+       skilltwo
+       skillthree
+     }
+   }
+ }
+}
+
+  // query($pathSlug: String!) {
+  //   allMongodbCoverlettercreatorCoverletters(frontmatter: { path: { eq: $pathSlug } }) {
+  //     html
+  //     frontmatter {
+  //       date
+  //       title
+  //       tags
+  //       cover {
+  //         childImageSharp {
+  //           fluid(
+  //             maxWidth: 1920
+  //             quality: 90
+  //             duotone: { highlight: "#386eee", shadow: "#2323be", opacity: 60 }
+  //           ) {
+  //             ...GatsbyImageSharpFluid_withWebp
+  //           }
+  //           resize(width: 1200, quality: 90) {
+  //             src
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 `;

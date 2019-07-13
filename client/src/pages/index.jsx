@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import { Header, PostList } from 'components';
 import { Layout } from 'layouts';
+import createAuth0Client from '@auth0/auth0-spa-js';
 
 const PostWrapper = styled.div`
   display: flex;

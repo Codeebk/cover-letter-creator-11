@@ -6,7 +6,7 @@ import { Header, BlogList } from 'components';
 import { Layout } from 'layouts';
 
 const Blog = ({ data }) => {
-  const { edges } = data.allMarkdownRemark;
+  const { edges } = data.allMongodbCoverlettercreatorCoverletters;
   return (
     <Layout>
       <Helmet title={'Blog Page'} />
@@ -14,12 +14,12 @@ const Blog = ({ data }) => {
       {edges.map(({ node }) => (
         <BlogList
           key={node.id}
-          cover={node.frontmatter.cover.childImageSharp.fluid}
-          path={node.frontmatter.path}
-          title={node.frontmatter.title}
-          date={node.frontmatter.date}
-          tags={node.frontmatter.tags}
-          excerpt={node.excerpt}
+          // cover={node.frontmatter.cover.childImageSharp.fluid}
+          // path={node.frontmatter.path}
+          title={node.firstname}
+          // date={node.frontmatter.date}
+          // tags={node.frontmatter.tags}
+          excerpt={node.skillone}
         />
       ))}
     </Layout>
