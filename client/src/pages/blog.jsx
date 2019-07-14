@@ -6,7 +6,7 @@ import { Header, BlogList } from 'components';
 import { Layout } from 'layouts';
 
 const Blog = ({ data }) => {
-  const { edges } = data.allMarkdownRemark;
+  const { edges } = data.allMongodbCoverlettercreatorCoverletters;
   return (
     <Layout>
       <Helmet title={'Blog Page'} />
@@ -14,12 +14,12 @@ const Blog = ({ data }) => {
       {edges.map(({ node }) => (
         <BlogList
           key={node.id}
-          cover={node.frontmatter.cover.childImageSharp.fluid}
-          path={node.frontmatter.path}
-          title={node.frontmatter.title}
-          date={node.frontmatter.date}
-          tags={node.frontmatter.tags}
-          excerpt={node.excerpt}
+          // cover={node.frontmatter.cover.childImageSharp.fluid}
+          // path={node.frontmatter.path}
+          title={node.firstname}
+          // date={node.frontmatter.date}
+          // tags={node.frontmatter.tags}
+          excerpt={node.skillone}
         />
       ))}
     </Layout>
@@ -50,31 +50,19 @@ Blog.propTypes = {
 };
 
 export const query = graphql`
-  query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 200)
-          frontmatter {
-            title
-            path
-            tags
-            date(formatString: "MM.DD.YYYY")
-            cover {
-              childImageSharp {
-                fluid(
-                  maxWidth: 1000
-                  quality: 90
-                  traceSVG: { color: "#2B2B2F" }
-                ) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+query {
+  allMongodbCoverlettercreatorCoverletters{
+   edges {
+     node {
+       firstname
+       lastname
+       targetjobtitle
+       targetcompany
+       skillone
+       skilltwo
+       skillthree
+     }
+   }
+ }
+}
 `;
